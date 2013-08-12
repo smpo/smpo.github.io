@@ -1,10 +1,7 @@
 $(function() {
 
-  /* 
-	Settings 
-	--------
-  */
-  
+  // ** Settings **
+  // ## Test ##
   // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to
   function set_settings() {
     window.settings = [];
