@@ -24,10 +24,15 @@ $(function() {
     // in condition 3, user will receive likes at the following timepoints (in ms), default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]
     settings.condition_3_likes = [10000, 11000,15000,35000,80000,100000,110000,150000,20000]; 
 
-    // usernames by which the likes will be given, drawn in subsequent order
+	// Adjusted likes
+	settings.condition_1_adjusted_likes = [12000, 14000,15000,35000,80000,100000,110000,150000,20000]; // 9
+	settings.condition_2_adjusted_likes = [12000, 14000,15000,35000,80000]; // 5
+	settings.condition_3_adjusted_likes = [12000, 9999999]; //1	
+	
+    // Usernames by which the likes will be given, drawn in subsequent order
     settings.likes_by = ['John','AncaD','NN','Arjen','Jane','George','Dan','Heather','Dan']; 
 
-    // qualtrics id, overwritten if url parameter qid is provided (!)
+    // Qualtrics id, overwritten if url parameter qid is provided (!)
     settings.defaultqid = 'SV_86MZEJccEKhl4qh';
   }
 
@@ -35,29 +40,25 @@ $(function() {
   
   // **Slide:** **Intro** 
   // -------------------
-  // With instructions regarding the task
+  // With instructions regarding the task. The intro container is shown, the continue button made clickable, calling up the next slide when clicked.
   function init_intro() {
-
-    // Show the container with the intro text
   	$('#intro').show();
-	
-    // Make the intro button clickable
   	$('#submit_intro').on('click',function() {
-
-        // Hide the intro slide and show the slide in which participants enter their username
-			  $('#intro').hide();
+			$('#intro').hide();
   			init_name();  			
-
   	});	
   }
   
 
   // **Slide:** **Username**
+  // -------------------
+  // Note: Only alphanumeric usernames without spaces are accepted
+  
   function init_name() {
 
   	$('#name').show();
 
-    // Only alphanumeric usernames without spaces are accepted
+    
   	$('#submit_username').on('click',function() {
 
   		var error = 0;
@@ -85,7 +86,8 @@ $(function() {
   	});
   }
 
-
+  // **Slide:** **Avatar**
+  // -------------------
   // Avatar slide in which the participant is asked to select an avatar
   function init_avatar() {
   	$('#avatar').show();
@@ -333,12 +335,32 @@ $(function() {
 	  window.qid = window.settings.defaultqid;
 	}
 
-    // switch according to condition, set settings.condition_likes
-    window.settings.condition_likes = settings.condition_1_likes;
 
-    // overwrite others according to condition
-    // ...
   }
+  
+  
+  // adjustments according to current condition
+  function adjust_to_condition() {
+
+    // the number of likes a person receives depends on the condition
+	// in addition, the number of likes another person receives is adjusted, so that there is the same number of likes overall
+	switch(condition) {
+		case 1:
+			window.settings.condition_likes = settings.condition_1_likes;
+			window.others.posts[1].likes = settings.condition_1_adjusted_likes;
+			break;
+		case 2:
+			window.settings.condition_likes = settings.condition_2_likes;
+			window.others.posts[1].likes = settings.condition_2_adjusted_likes;
+			break;
+		case 3:
+			window.settings.condition_likes = settings.condition_3_likes;
+			window.others.posts[1].likes = settings.condition_3_adjusted_likes;
+			break;
+	}	
+	  
+  }
+  
 
   // The variable QueryString contains the url parameters, i.e. condition no. and participant no.
   // via http://stackoverflow.com/a/979995
@@ -423,6 +445,7 @@ $(function() {
   // Set Settings, get Participant No. and Condition No.
   set_settings();
   get_params();
+  adjust_to_condition();
 
   // Start with the intro slide
   init_intro();
