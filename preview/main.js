@@ -33,8 +33,8 @@ $(function() {
 
   
   
-  // **Intro slide**
-  // ---------------
+  // **Slide:** **Intro** 
+  // -------------------
   // With instructions regarding the task
   function init_intro() {
 
@@ -52,7 +52,7 @@ $(function() {
   }
   
 
-  // Slide in which participants are asked to enter their username
+  // **Slide:** **Username**
   function init_name() {
 
   	$('#name').show();
