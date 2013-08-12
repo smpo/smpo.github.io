@@ -1,7 +1,10 @@
+// The paradigm consists of a number of slides that participants see one after the other.
+// The logic of the slides is described in seperate init_... functions.
+// Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.
+
 $(function() {
 
   // **Settings**
-  // ##Test##
   // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to
   function set_settings() {
     window.settings = [];
@@ -28,11 +31,8 @@ $(function() {
     settings.defaultqid = 'SV_86MZEJccEKhl4qh';
   }
 
-  // The paradigm consists of a number of slides that participants see one after the other.
-  // The logic of the slides is described in seperate init_... functions.
-  // Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.
-
-  // Intro slide with instructions
+  // **Intro slide** 
+  // With instructions regarding the task
   function init_intro() {
 
     // Show the container with the intro text
