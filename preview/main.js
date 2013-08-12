@@ -23,8 +23,8 @@ $(function() {
     // usernames by which the likes will be given, drawn in subsequent order
     settings.likes_by = ['John','AncaD','NN','Arjen','Jane','George','Dan','Heather','Dan']; 
 
-    // qualtrics id
-    settings.qualtricsid = 'SV_86MZEJccEKhl4qh';
+    // qualtrics id, overwritten if url parameter qid is provided (!)
+    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
   }
 
   // The paradigm consists of a number of slides that participants see one after the other.
@@ -299,7 +299,7 @@ $(function() {
     $('#final-continue').on('click', function() {
 
       // Redirect link
-      location.href = 'http://fppvu.qualtrics.com/SE/?SID='+settings.qualtricsid+'&p='+window.participant+'&c='+window.condition+'&u='+encodeURI(window.username)+'&av='+window.avatarexport+'&d='+encodeURI(window.description);
+      location.href = 'http://fppvu.qualtrics.com/SE/?SID='+window.qid+'&p='+window.participant+'&c='+window.condition+'&u='+encodeURI(window.username)+'&av='+window.avatarexport+'&d='+encodeURI(window.description);
 
     });
     
@@ -322,6 +322,12 @@ $(function() {
     } else {
       window.participant = 0; // participant defaults to 0
     }    
+    // qid number
+    if(window.QueryString.qid !== undefined && window.QueryString.qid !== "") {
+      window.qid = parseInt(window.QueryString.qid);
+    } else {
+	  window.qid = window.settings.defaultqid;
+	}
 
     // switch according to condition, set settings.condition_likes
     window.settings.condition_likes = settings.condition_1_likes;
