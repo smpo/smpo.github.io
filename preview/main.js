@@ -33,8 +33,8 @@ $(function() {
 
   
   
-  // Intro slide
-  // -----------
+  // **Intro slide**
+  // ---------------
   // With instructions regarding the task
   function init_intro() {
 

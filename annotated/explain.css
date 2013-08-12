@@ -9,6 +9,9 @@ body {
   padding: 50px 0 0 0;
   margin: 0;
 }
+hr {
+	border:1px solid #ccc;
+}
 .page-menu {
   position: fixed;
   background-color: #000;
