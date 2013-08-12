@@ -1,21 +1,21 @@
-// The paradigm consists of a number of slides that participants see one after the other.
-// The logic of the slides is described in seperate init_... functions.
-// Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.
+// The paradigm consists of a number of slides that participants see one after the other. The logic of the slides is described in seperate init_... functions. Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.
 
 $(function() {
 
-  // **Settings**
-  // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to
+  // Settings
+  // --------
+  // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.
+  
   function set_settings() {
     window.settings = [];
 
-    // number of avatars the user can choose from, default: 82
+    // Number of avatars the user can choose from, default: 82
     settings.numberofavatars = 82;
 
-    // length of the task in milliseconds, default: 180000 (3min) 
+    // Length of the task in milliseconds, default: 180000 (3min) 
     settings.tasklength = 180000; 
 
-    // in condition 1, user will receive likes at the following timepoints (in ms), default: [12000, 9999999]
+    // In condition 1, user will receive likes at the following timepoints (in ms), default: [12000, 9999999]
     settings.condition_1_likes = [12000, 9999999]; 
 
     // ... in condition 2, user will receive likes at the following timepoints (in ms), default: [10000, 15000,35000,80000,1320000,150000]
@@ -31,7 +31,9 @@ $(function() {
     settings.defaultqid = 'SV_86MZEJccEKhl4qh';
   }
 
-  // **Intro slide** 
+  
+  
+  // Intro slide
   // With instructions regarding the task
   function init_intro() {
 
