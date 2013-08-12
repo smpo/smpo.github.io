@@ -2,8 +2,8 @@
 
 $(function() {
 
-  // Settings
-  // --------
+  // **Settings**
+  // ------------
   // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.
   
   function set_settings() {
@@ -34,6 +34,7 @@ $(function() {
   
   
   // Intro slide
+  // -----------
   // With instructions regarding the task
   function init_intro() {
 
