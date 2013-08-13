@@ -10,22 +10,18 @@ $(function() {
   function set_settings() {
     window.settings = [];
 	// **Avatar number**   
-	
 	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
 	
 	// **Avatar images** 
-	
 	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
 
     settings.numberofavatars = 82;
 
 	// **Task length** 
-	
     // Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min) 
     settings.tasklength = 180000; 
 
-		// **Number of "likes"** 
-		
+	// **Number of "likes"** 
     // Each received "like" is indicated by the timepoint (in ms) at which the "like" will appear. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint is preceded by a single comma. 
 	// **In cases with only 1 "like," a second "like" is added with time point 9999999. This "like" is added for programming purposes and is never executed.
 	
@@ -39,7 +35,8 @@ $(function() {
     // in condition 3, user will receive 9 likes at the following timepoints (in ms). Default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]
     settings.condition_3_likes = [10000, 11000,15000,35000,80000,100000,110000,150000,20000]; 
 
-	// Adjusted likes
+	// **Others' likes**
+	// To keep the total distribution of "likes" constant across conditions, The "likes" received by one group member can be adjusted according to the participant's. By default, the other group member receives 9 "likes" in the participant-ostracism condition, 5 in the participant-inclusion condtion, and 1 in the participant-overinclusion condtion.
 	settings.condition_1_adjusted_likes = [12000, 14000,15000,35000,80000,100000,110000,150000,20000]; // 9
 	settings.condition_2_adjusted_likes = [12000, 14000,15000,35000,80000]; // 5
 	settings.condition_3_adjusted_likes = [12000, 9999999]; //1	
