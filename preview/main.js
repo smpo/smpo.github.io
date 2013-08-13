@@ -17,6 +17,11 @@ $(function() {
 
     settings.numberofavatars = 82;
 
+    // **Redirect function**
+	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures or to subsequent tasks. To set a redirect link, ...
+
+    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
+  }
 	// **Task length** 
     // Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min) 
     settings.tasklength = 180000; 
@@ -41,18 +46,16 @@ $(function() {
 	settings.condition_2_adjusted_likes = [12000, 14000,15000,35000,80000]; // 5
 	settings.condition_3_adjusted_likes = [12000, 9999999]; //1	
 	
-    // Usernames by which the likes will be given, drawn in subsequent order
-    settings.likes_by = ['John','AncaD','NN','Arjen','Jane','George','Dan','Heather','Dan']; 
+    // Usernames by which the participant will receive "likes"
+	// If group member names are changed, these should be changed accordingly.
+    settings.likes_by = ['John','AncaD','Sarah','Arjen','Jane','George','Dan','Heather','Ky']; 
 
-    // Qualtrics id, overwritten if url parameter qid is provided (!)
-    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
-  }
 
   
   
   // **Slide:** **Intro** 
   // -------------------
-  // With instructions regarding the task. The intro container is shown, the continue button made clickable, calling up the next slide when clicked.
+  // With instructions regarding the task. The intro container is shown, the continue calls the next slide when clicked.
   function init_intro() {
   	$('#intro').show();
   	$('#submit_intro').on('click',function() {
@@ -105,8 +108,6 @@ $(function() {
   function init_avatar() {
   	$('#avatar').show();
 
-    // Add avatar images to the slide, avatars are stored in the folder avatars are are numbered as avatar_NUMBER.png
-    // How many avatars are added depends on the according setting
     var avatars = window.settings.numberofavatars;    
   	for(var i=0; i<avatars; i++) 
   	{ 
@@ -169,7 +170,7 @@ $(function() {
   }
 
 
-  // More instructions
+  // Specific task instructions
   function init_fb_intro() {
   	$('#fb_intro').show();
 	
@@ -215,7 +216,7 @@ $(function() {
   		}
   	});
 	
-    // likes that the user reveive
+    // likes that the user receives
 
 		users = {
 		  "posts" : [
