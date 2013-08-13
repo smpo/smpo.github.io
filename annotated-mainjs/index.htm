@@ -40,21 +40,19 @@
 	
 	
 	
-
-	
 		<div class='sections grid-container'>
 	        <div class='code-bg hide-on-mobile'></div>
 		    <br /><br />		
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>The paradigm consists of a number of slides that participants see one after the other. The logic of the slides is described in seperate init_... functions. Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Instructions</strong> <strong>main.js</strong></p> <hr /> <p>In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor.</p> <p>The following parameters are necessary to adjust: number of avatar images, and the redirect link at the end of the study. All other parameters have a default option and adjustments are optional.</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>$(function() {
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Settings</strong></p> <hr /> <p>These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Parameters</strong></p> <hr /></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function set_settings() {
     window.settings = [];
 </pre></div>
@@ -62,42 +60,58 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Number of avatars the user can choose from, default: 82</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Number</strong> <strong>of</strong> <strong>Avatar</strong> <strong>Images</strong> <br />  Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82  The avatar images used in the online preview of the paradigm were created using by pickaface.net and due to their terms not available for redistribution. You should therefore create your own images. All images should be 250x250 pixels in size and carry the names &quot;avatar<em>NUMBER.png&quot; (e.g. avatar</em>1.png; &quot;png&quot; should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter. The images should be placed in folder &quot;avatars,&quot; located in the main study folder extracted on your computer or server.</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.numberofavatars = 82;
+
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Length of the task in milliseconds, default: 180000 (3min) </p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Redirection</strong> <br />  After the introduction task is over participants should be redirected to a survey with manipulation checks and dependent measures, to subsequent tasks, or to further instructions.   If the study is called with a parameter for redirection, as explained in the documentation, this value is overwritten.   To the redirect link, the following information will be appended: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Social Media Ostracism paradigm to subsequent tasks and measures. See documentation for more details.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.defaultredirect = 'http://fppvu.qualtrics.com/SE/?SID=SV_a9u9MdnpIRuxctT';
+
+</pre></div>
+				  </div>			
+				  <div class='clear'></div>			
+			
+				  <div class='section'>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Tasklength</strong> <br />  Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min) </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.tasklength = 180000;
+
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>In condition 1, user will receive likes at the following timepoints (in ms), default: [12000, 9999999]</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Number</strong> <strong>of</strong> <strong>&quot;likes&quot;</strong> <br />  Each received &quot;like&quot; is indicated by the timepoint (in ms) at which the &quot;like&quot; will appear. To change the number of &quot;likes&quot; in each condition, add or remove timepoints. Make sure that every timepoint (except the first) is preceded by a single comma.   In cases with only 1 &quot;like,&quot; a second &quot;like&quot; is added with time point 9999999. This &quot;like&quot; is added for programming purposes and is never executed, as it is outside the task time</p></div>
+					  <div class='code grid-60 mobile-grid-100 empty'><pre></pre></div>
+				  </div>			
+				  <div class='clear'></div>			
+			
+				  <div class='section'>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>In condition 1, the participant will receive 1 like at the following timepoint (in ms). Default: [12000, 9999999]</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_1_likes = [12000, 9999999];
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>... in condition 2, user will receive likes at the following timepoints (in ms), default: [10000, 15000,35000,80000,1320000,150000]</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>In condition 2, user will receive 6 likes at the following timepoints (in ms). Default: [10000, 15000,35000,80000,1320000,150000]</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_2_likes = [10000, 15000,35000,80000,1320000,150000];
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>in condition 3, user will receive likes at the following timepoints (in ms), default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>In condition 3, user will receive 9 likes at the following timepoints (in ms). Default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_3_likes = [10000, 11000,15000,35000,80000,100000,110000,150000,20000];
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Adjusted likes</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Others&#39; likes</strong> <br />  To keep the total distribution of &quot;likes&quot; constant across conditions, The &quot;likes&quot; received by one group member can be adjusted according to the participant&#39;s. By default, the other group member receives 9 &quot;likes&quot; in the participant-ostracism condition, 5 in the participant-inclusion condtion, and 1 in the participant-overinclusion condtion.</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  settings.condition_1_adjusted_likes = [12000, 14000,15000,35000,80000,100000,110000,150000,20000]; // 9
   settings.condition_2_adjusted_likes = [12000, 14000,15000,35000,80000]; // 5
   settings.condition_3_adjusted_likes = [12000, 9999999]; //1
@@ -106,24 +120,21 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Usernames by which the likes will be given, drawn in subsequent order</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.likes_by = ['John','AncaD','NN','Arjen','Jane','George','Dan','Heather','Dan'];
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Qualtrics id, overwritten if url parameter qid is provided (!)</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Usernames by which the participant will receive &quot;likes&quot;  If group member names are changed, these should be changed accordingly.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.likes_by = ['John','AncaD','Sarah','Arjen','Jane','George','Dan','Heather','Ky'];
   }
-
-
 </pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Intro</strong> </p> <hr /> <p>With instructions regarding the task. The intro container is shown, the continue button made clickable, calling up the next slide when clicked.</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><hr /> <p>Above were the basic parameters you can adjust using the instructions. The remaining code is also annotated, but we do not recommend changing it, unless you are comfortable with web programming.</p> <hr /></div>
+					  <div class='code grid-60 mobile-grid-100 empty'><pre></pre></div>
+				  </div>			
+				  <div class='clear'></div>			
+			
+				  <div class='section'>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Intro</strong> <br />  With instructions regarding the task. The intro container is shown, the continue calls the next slide when clicked.</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_intro() {
     $('#intro').show();
     $('#submit_intro').on('click',function() {
@@ -137,7 +148,7 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Username</strong></p> <hr /> <p>Note: Only alphanumeric usernames without spaces are accepted</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Username</strong> <br />  Note: Only alphanumeric usernames without spaces are accepted</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_name() {
 
     $('#name').show();
@@ -174,16 +185,11 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Avatar</strong></p> <hr /> <p>Avatar slide in which the participant is asked to select an avatar</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Avatar</strong> <br />  Avatar slide in which the participant is asked to select an avatar</p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_avatar() {
     $('#avatar').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add avatar images to the slide, avatars are stored in the folder avatars are are numbered as avatar_NUMBER.png  How many avatars are added depends on the according setting</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var avatars = window.settings.numberofavatars;
+
+    var avatars = window.settings.numberofavatars;
     for(var i=0; i&lt;avatars; i++)
     {
       $('.avatars').append('&lt;img id=&quot;avatar_' + i+ '&quot; src=&quot;avatars/avatar_' + i + '.png&quot; class=&quot;avatar&quot; /&gt;');
@@ -212,20 +218,15 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Slide for description</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Description</strong>   </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_text() {
     $('#text').show();
 
     $(&quot;#description&quot;).keyup(function(){
       $(&quot;#count&quot;).text(&quot;Characters left: &quot; + (400 - $(this).val().length));
     });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>To continue to the next slide, a description between 140 and 400 characters is required</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('#submit_text').on('click',function() {
+
+    $('#submit_text').on('click',function() {
 
       var error = 0;
       if($('#description').val() == &quot;&quot;) {
@@ -257,7 +258,7 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>More instructions</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Instructions</strong>   </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_fb_intro() {
     $('#fb_intro').show();
 
@@ -274,16 +275,12 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Login screen  </p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Login</strong> <strong>Screen</strong> <br />  Participant can continue after 8000ms = 8s      </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_fb_login() {
     $('#fb_login').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Participant can continue after 8000ms = 8s</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    setTimeout(function() {
+
+
+    setTimeout(function() {
       $('#msg_all_done').show();
       $(&quot;#loader&quot;).hide();
     }, 8000);
@@ -298,37 +295,22 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Task starts</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Task</strong>   </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_task() {
 
     $('#task').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Unbind backspace key so that the user does not go back to the previous page accidentally</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    shortcut.add(&quot;Backspace&quot;,function() {});
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Init countdown</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    jQuery(&quot;#countdown&quot;).countDown({
+
+  shortcut.add(&quot;Backspace&quot;,function() {});
+
+    jQuery(&quot;#countdown&quot;).countDown({
       startNumber: window.settings.tasklength/1000, // in seconds
       callBack: function(me) {
         console.log('over');
         $('#timer').text('00:00');
       }
     });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>likes that the user reveive</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    users = {
+
+    users = {
       &quot;posts&quot; : [
       {
         &quot;avatar&quot;: 'avatars/' + window.avatar + '.png',
@@ -344,7 +326,7 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add user box to slide</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add user box to slide     </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var tpl = $('#usertmp').html(),html = Mustache.to_html(tpl, users);
     $(&quot;#task&quot;).append(html);
 </pre></div>
@@ -352,7 +334,7 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add other boxes to slide</p></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add other boxes to slide    </p></div>
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var tpl = $('#otherstmp').html(),html = Mustache.to_html(tpl, others);
     $(&quot;#task&quot;).append(html);
 </pre></div>
@@ -507,13 +489,18 @@
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>qid number</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    if(window.QueryString.qid !== undefined &amp;&amp; window.QueryString.qid !== &quot;&quot;) {
-      window.qid = parseInt(window.QueryString.qid);
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>redirect</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    if(window.QueryString.redirect !== undefined &amp;&amp; window.QueryString.redirect !== &quot;&quot;) {
+      window.redirect = decode(window.QueryString.redirect);
     } else {
-    window.qid = window.settings.defaultqid;
+    window.redirect = window.settings.defaultredirect;
   }
 
+  var urlHasQuestionMark = (window.redirect.indexOf(&quot;?&quot;) &gt; -1);
+  if(!urlHasQuestionMark) {
+    window.redirect = window.redirect+&quot;?redir=1&quot;;
+  }
+  alert(window.redirect);
 
   }
 
@@ -610,6 +597,18 @@
 					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function pad (str, max) {
     return str.length &lt; max ? pad(&quot;0&quot; + str, max) : str;
   }
+</pre></div>
+				  </div>			
+				  <div class='clear'></div>			
+			
+				  <div class='section'>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Function for encoding and decoding URLs  via http://meyerweb.com/eric/tools/dencoder/</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function encode(unencoded) {
+  return encodeURIComponent(unencoded).replace(/'/g,&quot;%27&quot;).replace(/&quot;/g,&quot;%22&quot;);
+  }
+  function decode(encoded) {
+  return decodeURIComponent(encoded.replace(/\+/g,  &quot; &quot;));
+  }
 
 </pre></div>
 				  </div>			
@@ -676,7 +675,10 @@
 				  </div>			
 				  <div class='clear'></div>			
 					
-		</div>	
+		</div>
+	
+	
+	
 	
 	
 	<div class="footer">

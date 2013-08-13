@@ -40,643 +40,250 @@
 	
 	
 	
-
+	
 	
 		<div class='sections grid-container'>
 	        <div class='code-bg hide-on-mobile'></div>
 		    <br /><br />		
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>The paradigm consists of a number of slides that participants see one after the other. The logic of the slides is described in seperate init_... functions. Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>$(function() {
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 empty'></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>&lt;html lang=&quot;en&quot;&gt;&lt;!DOCTYPE html&gt;
+
+ &lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Settings</strong></p> <hr /> <p>These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function set_settings() {
-    window.settings = [];
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>This document contains all instructions which appear in the paradigm, along with some basic functionality. You can change all text by following the instructions below.</p> <p>If you don&#39;t have experience with programming, it is important that you alter only the plain text, as indicated in the instructions, and leave any functional elements intact.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Intro&lt;/title&gt;
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+
+&lt;!-- Stylesheets --&gt;
+&lt;link href=&quot;http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.core.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.default.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;!-- For IE6-8 support of HTML5 elements --&gt;
+&lt;!--[if lt IE 9]&gt;
+  &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;
+  &lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;!-- Javascript --&gt;
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.3.0/mustache.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;shortcut.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;profiles.json&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body oncontextmenu=&quot;return false;&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+
+
+
+&lt;div id=&quot;intro&quot; style=&quot;display:none;&quot; class=&quot;instr&quot;&gt;
+ &lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Number of avatars the user can choose from, default: 82</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.numberofavatars = 82;
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>Intro</h2> <p>You can edit this text using basic HTML elements for styling (e.g., &lt;br&gt;, &lt;h3&gt;).</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt; &lt;h3&gt;Welcome to this study&lt;/h3&gt;
+
+  You will complete a number of simple tasks, together with other people, &lt;br&gt;
+  with whom you will be connected via the internet.
+  &lt;br&gt;&lt;br&gt;
+  First, all participants in the study will select personal &quot;avatars&quot; and &lt;br&gt;
+  write short texts to introduce themselves.
+  &lt;br&gt;&lt;br&gt;
+  Before beginning the tasks, you will spend 3 minutes with the other &lt;br&gt;
+  people. During this time, you will be able to read and react to &lt;br&gt;
+  each-other's brief introductions.
+  &lt;br&gt;&lt;br&gt;
+  Specific instructions will follow.&lt;br&gt;&lt;br&gt;
+  &lt;b&gt;Thank you!&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+  &lt;button type=&quot;submit&quot; id=&quot;submit_intro&quot;&gt;Continue&lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id=&quot;name&quot; style=&quot;display:none;&quot; class=&quot;instr&quot;&gt;
+&lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Length of the task in milliseconds, default: 180000 (3min) </p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.tasklength = 180000;
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>Username</h2> <p>You can edit the instructions text for entering usernames below.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;
+  &lt;h3&gt;Please enter your name&lt;/h3&gt;
+  Could be your first name, nickname, or initials&lt;br&gt;&lt;br&gt;
+
+  &lt;input type=&quot;text&quot; id=&quot;username&quot;  autocomplete=&quot;off&quot; /&gt;&lt;br&gt;  &lt;br&gt;
+  &lt;button type=&quot;submit&quot;  id=&quot;submit_username&quot;&gt;Submit&lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id=&quot;avatar&quot; style=&quot;display:none;&quot;&gt;
+&lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>In condition 1, user will receive likes at the following timepoints (in ms), default: [12000, 9999999]</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_1_likes = [12000, 9999999];
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>Avatar choice</h2> <p>You can edit the instructions text. The text &quot;Your choice of avatar will not be recorded or analyzed&quot; depends on whether you record the choice of avatar.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;  &lt;h3&gt;Please select an avatar&lt;/h3&gt;
+  This avatar will represent you during the group task, but will not be linked to any of your responses. &lt;br&gt;Your choice of avatar will not be recorded or analyzed.
+  &lt;br&gt;&lt;br&gt;
+  &lt;div class=&quot;avatars&quot;&gt;&lt;/div&gt;
+  &lt;br&gt;&lt;button type=&quot;submit&quot;  id=&quot;submit_avatar&quot;&gt;Submit&lt;/button&gt;
+  &lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+
+
+&lt;div id=&quot;text&quot; style=&quot;display:none;&quot; class=&quot;instr&quot;&gt;
+&lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>... in condition 2, user will receive likes at the following timepoints (in ms), default: [10000, 15000,35000,80000,1320000,150000]</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_2_likes = [10000, 15000,35000,80000,1320000,150000];
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>Description entry</h2> <p>You can edit the instructions text.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;  &lt;h3&gt;Please introduce yourself &lt;/h3&gt;
+  Please write a paragraph in which you introduce yourself to the rest of the group. &lt;br&gt;
+  Write something you would like to tell about yourself - anything you want to share.
+  &lt;br&gt;&lt;br&gt;
+  &lt;textarea id=&quot;description&quot; autocomplete=&quot;off&quot; /&gt;&lt;/textarea&gt;&lt;br&gt;
+  &lt;span id=&quot;count&quot;&gt;Characters left: 400&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+  &lt;button type=&quot;submit&quot; id=&quot;submit_text&quot;&gt;Submit&lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id=&quot;fb_intro&quot; style=&quot;display:none;&quot; class=&quot;instr&quot;&gt;
+&lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>in condition 3, user will receive likes at the following timepoints (in ms), default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.condition_3_likes = [10000, 11000,15000,35000,80000,100000,110000,150000,20000];
-</pre></div>
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>Task instructions</h2> <p>You can edit the instructions text. The prompt to try and form an impression of the other players is recommended in all ostacism paradigms. Defining the action of &quot;liking&quot; is also recommended. The information regarding task duration can be adjusted to match the actual duration you have set.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;  &lt;h3&gt;Group Introduction&lt;/h3&gt;
+  Soon after connecting, you should be able to see the other people's descriptions. &lt;br&gt;
+  You can read and react to the short introduction they wrote about themselves, by &lt;br&gt;
+  clicking a &quot;like&quot; button, similar to the &quot;like&quot; button on Facebook (&quot;favorite&quot; on Twitter,&lt;br&gt;
+  &hearts; in Tumblr and Instagram, etc.) &lt;br&gt;
+  &lt;br&gt;
+  Even though your interaction is minimal, please try to form an impression of the &lt;br&gt;
+  people in the group. Try to imagine them in real life - how they might look &lt;br&gt;
+  or sound, what kind of people they are, how you would get along with them.
+  &lt;br&gt;&lt;br&gt;The task will last 3 minutes and is very important to the study, so please be attentive,
+  &lt;br&gt;without switching pages, or doing unrelated tasks. Questions about the other people &lt;br&gt;might follow.
+  &lt;br&gt;&lt;br&gt;&lt;b&gt;If these instructions are clear, you can proceed to log in.&lt;/b&gt;&lt;br&gt;
+  &lt;br&gt;
+  &lt;button type=&quot;submit&quot;  id=&quot;submit_fb_intro&quot;&gt;Log in&lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id=&quot;fb_login&quot; style=&quot;display:none;&quot; class=&quot;instr&quot;&gt;
+  &lt;h3&gt;Establishing connection&lt;/h3&gt;
+  Please wait while you are being connected to the other participants in your group.&lt;br&gt;&lt;br&gt;
+  &lt;img class=&quot;load&quot; src='ajax-loader.gif' id=&quot;loader&quot;&gt;
+  &lt;div id=&quot;msg_all_done&quot; style=&quot;display:none;&quot;&gt;
+  &lt;br&gt;
+    &lt;b&gt;All participants are now connected and you are ready to proceed.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+    &lt;button type=&quot;submit&quot;  id=&quot;submit_fb_login&quot;&gt;Continue&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!--</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 			
 				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Adjusted likes</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  settings.condition_1_adjusted_likes = [12000, 14000,15000,35000,80000,100000,110000,150000,20000]; // 9
-  settings.condition_2_adjusted_likes = [12000, 14000,15000,35000,80000]; // 5
-  settings.condition_3_adjusted_likes = [12000, 9999999]; //1
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Usernames by which the likes will be given, drawn in subsequent order</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.likes_by = ['John','AncaD','NN','Arjen','Jane','George','Dan','Heather','Dan'];
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Qualtrics id, overwritten if url parameter qid is provided (!)</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
-  }
+					  <div class='comment grid-40 mobile-grid-100 not-empty'><h2>In-task instructions timer</h2> <p>You can edit the instructions text.</p></div>
+					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>--&gt;
+&lt;div id=&quot;task&quot; style=&quot;display:none;&quot;&gt;
+  &lt;div id=&quot;countdown&quot;&gt;&lt;span class=&quot;secs&quot; style=&quot;display: none;&quot;&gt;&lt;/span&gt;You can click &quot;Like&quot; if you have enjoyed somebody's description&lt;br&gt;&lt;br&gt;time left:&lt;br&gt;&lt;span id=&quot;timer&quot; class=&quot;cntr label label-info&quot;&gt;&lt;/span&gt;
+  &lt;br&gt;
+  &lt;button type=&quot;submit&quot; id='final-continue' style=&quot;display:none;&quot;&gt;Continue&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Intro</strong> </p> <hr /> <p>With instructions regarding the task. The intro container is shown, the continue button made clickable, calling up the next slide when clicked.</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_intro() {
-    $('#intro').show();
-    $('#submit_intro').on('click',function() {
-      $('#intro').hide();
-        init_name();
-    });
-  }
+&lt;script type=&quot;template/text&quot; id=&quot;usertmp&quot;&gt;
+  {{#posts}}
 
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Username</strong></p> <hr /> <p>Note: Only alphanumeric usernames without spaces are accepted</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_name() {
+    &lt;div class=&quot;entry&quot;&gt;
+    &lt;div class=&quot;tophalf&quot;&gt;
 
-    $('#name').show();
+      &lt;img src=&quot;{{avatar}}&quot; class=&quot;avatar&quot;&gt;
+      &lt;h3&gt;{{username}}&lt;/h3&gt;
 
+      &lt;div class=&quot;main&quot;&gt;
+        &lt;p&gt;{{text}}&lt;/p&gt;
+      &lt;/div&gt;
 
-    $('#submit_username').on('click',function() {
+      &lt;br style=&quot;clear:both;&quot;&gt;
 
-      var error = 0;
-      var uname = $('#username').val();
+    &lt;/div&gt;
 
-      if(uname == &quot;&quot;) {
-        error = 1;
-        errormsg = 'Please enter text';
-        uname = &quot;undefined&quot;;
-      }
-      if(not_alphanumeric(uname)) {
-        error = 1;
-        errormsg = 'Please only letters (and no spaces)';
-      }
+    &lt;div class=&quot;bottomhalf&quot;&gt;
+      Likes &lt;span class=&quot;badge badge-custom userslikes&quot; data-likes=&quot;{{likes}}&quot; data-usernames=&quot;{{usernames}}&quot;&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
 
-      if(error == 0) {
-      $('#name').hide();
-      window.username = $('#username').val();
-        init_avatar();
-      } else {
-        alertify.log(errormsg,&quot;error&quot;);
-      }
+  {{/posts}}
+&lt;/script&gt;
 
 
-    });
-  }
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p><strong>Slide:</strong> <strong>Avatar</strong></p> <hr /> <p>Avatar slide in which the participant is asked to select an avatar</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_avatar() {
-    $('#avatar').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add avatar images to the slide, avatars are stored in the folder avatars are are numbered as avatar_NUMBER.png  How many avatars are added depends on the according setting</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var avatars = window.settings.numberofavatars;
-    for(var i=0; i&lt;avatars; i++)
-    {
-      $('.avatars').append('&lt;img id=&quot;avatar_' + i+ '&quot; src=&quot;avatars/avatar_' + i + '.png&quot; class=&quot;avatar&quot; /&gt;');
-    }
+&lt;script type=&quot;template/text&quot; id=&quot;otherstmp&quot;&gt;
+  {{#posts}}
+    &lt;div class=&quot;entry&quot;&gt;
+    &lt;div class=&quot;tophalf&quot;&gt;
 
-    $('.avatar').on('click', function() {
-      $('.avatar').removeClass('selected');
-      $(this).addClass('selected');
-    });
+      &lt;img src=&quot;{{avatar}}&quot; class=&quot;avatar&quot;&gt;
+        &lt;h3&gt;{{username}}&lt;/h3&gt;
 
-      $('#submit_avatar').on('click',function() {
-        if($('.selected').length == 1) {
-        $('#avatar').hide();
-        window.avatar = $('.selected').attr('id');
-        window.avatarexport = /avatar_([^\s]+)/.exec(window.avatar)[1];
-          init_text();
-        } else {
-          alertify.log(&quot;Please select an avatar&quot;,&quot;error&quot;);
-        }
-      });
+      &lt;div class=&quot;main&quot;&gt;
 
-  }
+        &lt;p&gt;{{text}}&lt;/p&gt;
+      &lt;/div&gt;
 
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Slide for description</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_text() {
-    $('#text').show();
+      &lt;br style=&quot;clear:both;&quot;&gt;
 
-    $(&quot;#description&quot;).keyup(function(){
-      $(&quot;#count&quot;).text(&quot;Characters left: &quot; + (400 - $(this).val().length));
-    });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>To continue to the next slide, a description between 140 and 400 characters is required</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('#submit_text').on('click',function() {
+    &lt;/div&gt;
 
-      var error = 0;
-      if($('#description').val() == &quot;&quot;) {
-        error = 1;
-        errormsg = 'Please enter text';
-      }
-      if($('#description').val() !== &quot;&quot; &amp;&amp; $('#description').val().length &lt; 140) {
+    &lt;div class=&quot;bottomhalf&quot;&gt;
+      Likes &lt;span class=&quot;badge badge-custom otherslikes&quot; data-likes=&quot;{{likes}}&quot;&gt;0&lt;/span&gt;
+      &lt;button type=&quot;submit&quot; class=&quot;btn pull-right btn-like btn-custom btn-deround&quot;&gt;Like &lt;i class=&quot;icon-thumbs-up icon-white&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/div&gt;
 
-        error = 1;
-        errormsg = 'Please write a bit more';
-      }
-      if($('#description').val().length &gt; 401) {
-
-        error = 1;
-        errormsg = 'Please enter less text';
-      }
-      if(error == 0) {
-        $('#text').hide();
-        window.description = $('#description').val();
-          init_fb_intro();
-        } else {
-          alertify.log(errormsg,&quot;error&quot;);
-        }
-    });
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>More instructions</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_fb_intro() {
-    $('#fb_intro').show();
-
-    $('#submit_fb_intro').on('click',function() {
-
-      $('#fb_intro').hide();
-       init_fb_login();
-
-    });
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Login screen  </p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_fb_login() {
-    $('#fb_login').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Participant can continue after 8000ms = 8s</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    setTimeout(function() {
-      $('#msg_all_done').show();
-      $(&quot;#loader&quot;).hide();
-    }, 8000);
-
-    $('#submit_fb_login').on('click',function() {
-      $('#fb_login').hide();
-        init_task();
-    });
-  }
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Task starts</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function init_task() {
-
-    $('#task').show();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Unbind backspace key so that the user does not go back to the previous page accidentally</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    shortcut.add(&quot;Backspace&quot;,function() {});
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Init countdown</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    jQuery(&quot;#countdown&quot;).countDown({
-      startNumber: window.settings.tasklength/1000, // in seconds
-      callBack: function(me) {
-        console.log('over');
-        $('#timer').text('00:00');
-      }
-    });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>likes that the user reveive</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    users = {
-      &quot;posts&quot; : [
-      {
-        &quot;avatar&quot;: 'avatars/' + window.avatar + '.png',
-        &quot;username&quot;: window.username,
-        &quot;text&quot;: window.description,
-        &quot;likes&quot;: window.settings.condition_likes,
-        &quot;usernames&quot;: window.settings.likes_by
-      }
-      ]
-    };
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add user box to slide</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var tpl = $('#usertmp').html(),html = Mustache.to_html(tpl, users);
-    $(&quot;#task&quot;).append(html);
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Add other boxes to slide</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    var tpl = $('#otherstmp').html(),html = Mustache.to_html(tpl, others);
-    $(&quot;#task&quot;).append(html);
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Randomize order of other players boxes</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    function reorder() {
-       var grp = $(&quot;#others&quot;).children();
-       var cnt = grp.length;
-
-       var temp,x;
-       for (var i = 0; i &lt; cnt; i++) {
-           temp = grp[i];
-         x = Math.floor(Math.random() * cnt);
-         grp[i] = grp[x];
-         grp[x] = temp;
-     }
-     $(grp).remove();
-     $(&quot;#others&quot;).append($(grp));
-    }
-    reorder();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>When user receives likes</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('.userslikes').each(function() {
-      var that = $(this);
-      var usernames = $(this).data('usernames').split(&quot;,&quot;);
-      var times = $(this).data('likes').split(&quot;,&quot;);
-
-      for(var i=0; i&lt;times.length; i++)
-      {
-        times[i] = +times[i];
-
-        themsg = usernames[i] + &quot; liked your post&quot;;
-
-        setTimeout(function(themsg) {
-          that.text(parseInt(that.text()) + 1);
-          alertify.success(themsg)
-
-        }, times[i], themsg);
-      }
-    });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>When others receive likes</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('.otherslikes').each(function() {
-      var that = $(this);
-      var times = $(this).data('likes').split(&quot;,&quot;);
-
-      for(var i=0; i&lt;times.length; i++)
-      {
-        times[i] = +times[i];
-
-        setTimeout(function () {
-          that.text(parseInt(that.text()) + 1);
-        }, times[i]);
-
-      }
-    });
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Initialize like buttons</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('.btn-like').on('click', function() {
-      $(this).prev().text(parseInt($(this).prev().text()) + 1);</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Like buttons can only be clicked once</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>      $(this).attr(&quot;disabled&quot;, true);
-    });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Initalize Masonry plugin  For display of user and other players boxes in columns without gaps</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    $('#task').masonry({
-      itemSelector : '.entry',
-      columnWidth : 10
-    });
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Redirect, default after 180000ms = 180s = 3min</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    setTimeout(function() {
-
-    $(window).unbind('beforeunload');
-
-    $('#final-continue').show();
-
-    $('#timer').text('00:00');
-
-    $('#final-continue').on('click', function() {
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Redirect link</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>      location.href = 'http://fppvu.qualtrics.com/SE/?SID='+window.qid+'&amp;p='+window.participant+'&amp;c='+window.condition+'&amp;u='+encodeURI(window.username)+'&amp;av='+window.avatarexport+'&amp;d='+encodeURI(window.description);
-
-    });
-
-    },window.settings.tasklength); // timing for task
-
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Get URL parameters to set condition number and participant number</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function get_params() {</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>condition number must be 1, 2, or 3</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    if(window.QueryString.c !== undefined &amp;&amp; !isNaN(parseInt(window.QueryString.c)) &amp;&amp; parseInt(window.QueryString.c) &gt; 0 &amp;&amp; parseInt(window.QueryString.c) &lt; 4) {
-      window.condition = parseInt(window.QueryString.c);
-    } else {
-      window.condition = 1; // condition defaults to 1
-    }</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>participant number must be numeric</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    if(window.QueryString.p !== undefined &amp;&amp; !isNaN(parseInt(window.QueryString.p))) {
-      window.participant = parseInt(window.QueryString.p);
-    } else {
-      window.participant = 0; // participant defaults to 0
-    }</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>qid number</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>    if(window.QueryString.qid !== undefined &amp;&amp; window.QueryString.qid !== &quot;&quot;) {
-      window.qid = parseInt(window.QueryString.qid);
-    } else {
-    window.qid = window.settings.defaultqid;
-  }
+    &lt;/div&gt;
+  {{/posts}}
+&lt;/script&gt;
 
 
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>adjustments according to current condition</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function adjust_to_condition() {
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>the number of likes a person receives depends on the condition  in addition, the number of likes another person receives is adjusted, so that there is the same number of likes overall</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  switch(condition) {
-    case 1:
-      window.settings.condition_likes = settings.condition_1_likes;
-      window.others.posts[1].likes = settings.condition_1_adjusted_likes;
-      break;
-    case 2:
-      window.settings.condition_likes = settings.condition_2_likes;
-      window.others.posts[1].likes = settings.condition_2_adjusted_likes;
-      break;
-    case 3:
-      window.settings.condition_likes = settings.condition_3_likes;
-      window.others.posts[1].likes = settings.condition_3_adjusted_likes;
-      break;
-  }
-
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>The variable QueryString contains the url parameters, i.e. condition no. and participant no.  via http://stackoverflow.com/a/979995</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  window.QueryString = function () {
-    var query_string = {};
-    var query = window.location.search.substring(1);
-    var vars = query.split(&quot;&amp;&quot;);
-    for (var i=0;i&lt;vars.length;i++) {
-      var pair = vars[i].split(&quot;=&quot;);</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>If first entry with this name</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>      if (typeof query_string[pair[0]] === &quot;undefined&quot;) {
-        query_string[pair[0]] = pair[1];</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>If second entry with this name</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>      } else if (typeof query_string[pair[0]] === &quot;string&quot;) {
-        var arr = [ query_string[pair[0]], pair[1] ];
-        query_string[pair[0]] = arr;</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>If third or later entry with this name</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>      } else {
-        query_string[pair[0]].push(pair[1]);
-      }
-    }
-      return query_string;
-  } ();
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Function to check letters and numbers  via http://www.w3resource.com/javascript/form/letters-numbers-field.php</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function not_alphanumeric(inputtxt) {
-    var letterNumber = /^[0-9a-zA-Z]+$/;
-    if(inputtxt.match(letterNumber)) {
-        return false;
-      } else {
-        return true;
-      }
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Function to add extra zeros infront of numbers (used for the countdown)  via http://stackoverflow.com/a/6466243</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  function pad (str, max) {
-    return str.length &lt; max ? pad(&quot;0&quot; + str, max) : str;
-  }
-
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Simple Countdown  via http://davidwalsh.name/jquery-countdown-plugin</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  jQuery.fn.countDown = function(settings,to) {
-    settings = jQuery.extend({
-      startFontSize: &quot;12px&quot;,
-      endFontSize: &quot;12px&quot;,
-      duration: 1000,
-      startNumber: 10,
-      endNumber: 0,
-      callBack: function() { }
-    }, settings);
-    return this.each(function() {
-      if(!to &amp;&amp; to != settings.endNumber) { to = settings.startNumber; }
-      jQuery(this).children('.secs').text(to);
-      jQuery(this).animate({
-        fontSize: settings.endFontSize
-      }, settings.duration, &quot;&quot;, function() {
-        if(to &gt; settings.endNumber + 1) {
-          jQuery(this).children('.secs').text(to - 1);
-          jQuery(this).countDown(settings, to - 1);
-          var minutes = Math.floor(to / 60);
-          var seconds = to - minutes * 60;
-          jQuery(this).children('.cntr').text(pad(minutes.toString(),2) + ':' + pad(seconds.toString(),2));
-        }
-        else {
-          settings.callBack(this);
-        }
-      });
-    });
-  };
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Prevent that participants accidentally exit the experiment by disabling F5 and backspace keys</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  shortcut.add(&quot;f5&quot;,function() {});
-  $(window).bind('beforeunload', function(){
-    return 'Are you sure you want to quit the experiment completely?';
-  });
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Set Settings, get Participant No. and Condition No.</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  set_settings();
-  get_params();
-  adjust_to_condition();
-</pre></div>
-				  </div>			
-				  <div class='clear'></div>			
-			
-				  <div class='section'>
-					  <div class='comment grid-40 mobile-grid-100 not-empty'><p>Start with the intro slide</p></div>
-					  <div class='code grid-60 mobile-grid-100 not-empty'><pre>  init_intro();
-
-});</pre></div>
+&lt;/body&gt;
+&lt;/html&gt;</pre></div>
 				  </div>			
 				  <div class='clear'></div>			
 					
-		</div>	
+		</div>
+	
+	
+	
 	
 	
 	<div class="footer">
