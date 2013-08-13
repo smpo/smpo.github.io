@@ -57,7 +57,6 @@ $(function() {
   
   
   // **Slide:** **Intro**     
-  // -------------------
   // With instructions regarding the task. The intro container is shown, the continue calls the next slide when clicked.
   function init_intro() {
   	$('#intro').show();
@@ -68,8 +67,7 @@ $(function() {
   }
   
 
-  // **Slide:** **Username**    
-  // -------------------
+  // **Slide:** **Username**       
   // Note: Only alphanumeric usernames without spaces are accepted
   
   function init_name() {
@@ -104,8 +102,7 @@ $(function() {
   	});
   }
 
-  // **Slide:** **Avatar**
-  // -------------------
+  // **Slide:** **Avatar**       
   // Avatar slide in which the participant is asked to select an avatar
    
   function init_avatar() {
@@ -186,11 +183,11 @@ $(function() {
   }
 
 
-  // Login screen  
+  // Login screen     
   function init_fb_login() {
   	$('#fb_login').show();
 	
-    // Participant can continue after 8000ms = 8s
+    // Participant can continue after 8000ms = 8s    
   	setTimeout(function() {
   		$('#msg_all_done').show();
   		$("#loader").hide();
@@ -202,15 +199,15 @@ $(function() {
   	});	
   }
   
-  // Task starts
+  // Task starts    
   function init_task() {
 
     $('#task').show();
 
-    // Unbind backspace key so that the user does not go back to the previous page accidentally
+    // Unbind backspace key so that the user does not go back to the previous page accidentally    
 	  shortcut.add("Backspace",function() {});      
 
-    // Init countdown
+    // Init countdown      
   	jQuery("#countdown").countDown({
   		startNumber: window.settings.tasklength/1000, // in seconds
   		callBack: function(me) {
@@ -219,7 +216,7 @@ $(function() {
   		}
   	});
 	
-    // likes that the user receives
+    // likes that the user receives     
 
 		users = {
 		  "posts" : [
@@ -233,14 +230,14 @@ $(function() {
 		  ]
 		};
 		
-    // Add user box to slide
+    // Add user box to slide     
 	  var tpl = $('#usertmp').html(),html = Mustache.to_html(tpl, users);
 	  $("#task").append(html);
 	  
-    // Add other boxes to slide
+    // Add other boxes to slide    
 	  var tpl = $('#otherstmp').html(),html = Mustache.to_html(tpl, others);
 	  $("#task").append(html);
-
+ 
     // Randomize order of other players boxes
     function reorder() {
        var grp = $("#others").children();
