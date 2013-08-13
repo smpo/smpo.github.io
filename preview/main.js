@@ -1,17 +1,19 @@
 // In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
-
 // Some parameters are necessary to adjust: avatar images, redirect link at the end of the study
 // The other parameters have a default option and adjustments are optional
+
 $(function() {
 
   // **Parameters**
   // ------------
-  // These parameters should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.
   
   function set_settings() {
     window.settings = [];
+	// **Avatar number**   
+	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
+	// **Avatar images** 
+	// The avatar images used in the online preview of the paradigm are copyrighted and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
 
-    // Number of avatars the user can choose from, default: 82
     settings.numberofavatars = 82;
 
     // Length of the task in milliseconds, default: 180000 (3min) 
@@ -91,6 +93,7 @@ $(function() {
   // **Slide:** **Avatar**
   // -------------------
   // Avatar slide in which the participant is asked to select an avatar
+   
   function init_avatar() {
   	$('#avatar').show();
 
