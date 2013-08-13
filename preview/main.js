@@ -1,6 +1,6 @@
 // In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
-// Some parameters are necessary to adjust: avatar images, redirect link at the end of the study
-// The other parameters have a default option and adjustments are optional
+// The following parameter are necessary to adjust: avatar images, redirect link at the end of the study.
+// The other parameters have a default option and adjustments are optional.
 
 $(function() {
 
@@ -18,7 +18,7 @@ $(function() {
     settings.numberofavatars = 82;
 
     // **Redirect function**
-	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures or to subsequent tasks. To set a redirect link, ...
+	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures, to subsequent tasks, or to further instructions. To set a redirect link, ... 
 	// The redirect link will be set to contain the following information: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Socail Media Ostracism paradigm to subsequent tasks and measures
 
     settings.defaultqid = 'SV_86MZEJccEKhl4qh';
