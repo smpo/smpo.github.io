@@ -19,6 +19,7 @@ $(function() {
 
     // **Redirect function**
 	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures or to subsequent tasks. To set a redirect link, ...
+	// The redirect link will be set to contain the following information: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Socail Media Ostracism paradigm to subsequent tasks and measures
 
     settings.defaultqid = 'SV_86MZEJccEKhl4qh';
   }
