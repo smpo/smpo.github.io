@@ -12,12 +12,12 @@ $(function() {
 	// **Avatar number**   
 	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
 	
-	// **Avatar images** 
+	// **Avatar images**   
 	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
 
     settings.numberofavatars = 82;
 
-    // **Redirect function**
+    // **Redirect function**    
 	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures, to subsequent tasks, or to further instructions. To set a redirect link, ... 
 	// The redirect link will be set to contain the following information: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Socail Media Ostracism paradigm to subsequent tasks and measures
 
