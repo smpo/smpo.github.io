@@ -1,16 +1,9 @@
-	 // **Group members profiles**   
-	// Each profile consists of (1) avatar, (2) username, (3) personal descriptionl, (4) number of "likes" the profile will receive throughout the interaction
+// **Group members profiles**   
+// Each profile consists of (1) avatar, (2) username, (3) personal description, (4) number of "likes" the profile will receive throughout the interaction
 	
-	
-	
-
-	
-
-	
-	window.others = {
+window.others = {
   "posts" : [
       {
-// The avatars used in the previews are subject to copyrights and you will need to create your own avatars. The new avatars have to be 250x250px, placed in the subfolder "others" (located inside the folder "avatars" in the main study folder you extracted on your computer or server). The names of the image files should match the names in the source code (including whether the file extension is upper or lower case). For example, "avatars/others/george.png" will correspond to a file called "george.png" and placed in the subfolder others (avatar/others).
         "avatar": "avatars/others/george.png",
         "username": "Georgeee",
         "text": "I'm a 19 year old dude from Wisconsin (commence making fun of my accent). I love music and lately you can catch me listening to nothing but Joy Division, Echo & the bunnymen, and the smiths. Besides music I like learning languages, psychology, drawing, and writing.",
@@ -18,7 +11,7 @@
       },
       {
         "avatar": "avatars/others/sarah.png",
-        "username": "Sarah",	//The personal description needs to be entered without line breaks, as it appears in the default descriptions. 
+        "username": "Sarah",
         "text": "Let me introduce myself. I’m Sarah, married, and mother of two wonderful (grown up) children. My career has been a bit peculiar. Starting off as a graduate historian, I switched to an entirely different discipline: occupational assessor trying to help young people with disabilities to get a job. I’ve just retired and started spending more time on my hobbies, such as singing, reading, and playing volleyball.",
         "likes": [12000, 14000,15000,35000,80000,100000,110000,150000,20000] //9
       },
@@ -26,8 +19,7 @@
         "avatar": "avatars/others/john.png",
         "username": "John",
         "text": "Hi there, I’m 57 years old, married, with two kids. I’ve been a computer programmer in the states for about 30 years, but don’t worry: I don’t have the dusty haircut, oversized buttoned shirt and nerdie big frame glasses. Looking forward to working with you all. Cheers, John",
-        	//The "likes" each profile receives is indicated by the timepoint (in ms) at which the "like" will appear. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint is preceded by a single comma. For example if you change "[45000, 50000, 110000, 150000]" to "[45000, 50000, 87561, 110000, 150000]" the corresponding profile will receive 5 instead of 4 likes.
-	"likes": [20000, 21000] //2
+		"likes": [20000, 21000] //2
       },
       {
         "avatar": "avatars/others/anca.png",

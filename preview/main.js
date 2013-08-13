@@ -1,7 +1,7 @@
-  // **Instructions MainJS**
-  // ------------
-  // In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
-// The following parameters are necessary to adjust: avatar images, redirect link at the end of the study. All other parameters have a default option and adjustments are optional.
+// **Instructions** **main.js**
+// ------------
+// In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor.
+// The following parameters are necessary to adjust: number of avatar images, and the redirect link at the end of the study. All other parameters have a default option and adjustments are optional.
 
 $(function() {
 
@@ -10,29 +10,31 @@ $(function() {
   
   function set_settings() {
     window.settings = [];
-	// **Avatar number**   
-	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
 	
-	// **Avatar images**   
-	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter. The images should be placed in folder "avatars," located in the main study folder extracted on your computer or server.
+	// **Number** **of** **Avatar** **Images**   
+	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
+	// The avatar images used in the online preview of the paradigm were created using by pickaface.net and due to their terms not available for redistribution. You should therefore create your own images. All images should be 250x250 pixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter. The images should be placed in folder "avatars," located in the main study folder extracted on your computer or server.
 
     settings.numberofavatars = 82;
 
-    // **Redirect function**    
-	// After the introduction task is over participants should be redirected to a survey with manipulation checks and depdentent measures, to subsequent tasks, or to further instructions. To set a redirect link, ... 
-	// The redirect link will be set to contain the following information: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Socail Media Ostracism paradigm to subsequent tasks and measures
+	
+    // **Redirection**    
+	// After the introduction task is over participants should be redirected to a survey with manipulation checks and dependent measures, to subsequent tasks, or to further instructions. 
+	// If the study is called with a parameter for redirection, as explained in the documentation, this value is overwritten. 
+	// To the redirect link, the following information will be appended: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Social Media Ostracism paradigm to subsequent tasks and measures. See documentation for more details.
 
-    settings.defaultqid = 'SV_86MZEJccEKhl4qh';
-  }
-	// **Task length**     
+    settings.defaultredirect = 'http://fppvu.qualtrics.com/SE/?SID=SV_a9u9MdnpIRuxctT';
+
+	
+	// **Tasklength**     
     // Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min) 
     settings.tasklength = 180000; 
 
-	// **Number of "likes"**    
-    // Each received "like" is indicated by the timepoint (in ms) at which the "like" will appear. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint is preceded by a single comma. 
-	// **In cases with only 1 "like," a second "like" is added with time point 9999999. This "like" is added for programming purposes and is never executed.
 	
-    settings.tasklength = 180000; 
+	// **Number** **of** **"likes"**    
+    // Each received "like" is indicated by the timepoint (in ms) at which the "like" will appear. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint (except the first) is preceded by a single comma. 
+	// In cases with only 1 "like," a second "like" is added with time point 9999999. This "like" is added for programming purposes and is never executed, as it is outside the task time
+
     // In condition 1, the participant will receive 1 like at the following timepoint (in ms). Default: [12000, 9999999]
     settings.condition_1_likes = [12000, 9999999]; 
 
@@ -51,9 +53,10 @@ $(function() {
     // Usernames by which the participant will receive "likes"
 	// If group member names are changed, these should be changed accordingly.
     settings.likes_by = ['John','AncaD','Sarah','Arjen','Jane','George','Dan','Heather','Ky']; 
-
+  }
+  
   // -------------------
-  // Above were the basic parameters you can adjust using the instructions. The remaining code is also annotated, but we do not recommend changing it, unless you are comfortable with JavaScript and HTML.
+  // Above were the basic parameters you can adjust using the instructions. The remaining code is also annotated, but we do not recommend changing it, unless you are comfortable with web programming.
   // -------------------
   
   
@@ -134,7 +137,7 @@ $(function() {
   }
 
 
-  // Slide for description
+  // **Slide:** **Description**   
   function init_text() {
   	$('#text').show();
 
@@ -142,7 +145,6 @@ $(function() {
   	  $("#count").text("Characters left: " + (400 - $(this).val().length));
   	});
 
-    // To continue to the next slide, a description between 140 and 400 characters is required
   	$('#submit_text').on('click',function() {
 
   		var error = 0;
@@ -171,7 +173,7 @@ $(function() {
   }
 
 
-  // Specific task instructions
+  // **Slide:** **Instructions**   
   function init_fb_intro() {
   	$('#fb_intro').show();
 	
@@ -184,11 +186,12 @@ $(function() {
   }
 
 
-  // Login screen     
+  // **Slide:** **Login** **Screen**   
+  // Participant can continue after 8000ms = 8s      
   function init_fb_login() {
   	$('#fb_login').show();
 	
-    // Participant can continue after 8000ms = 8s    
+
   	setTimeout(function() {
   		$('#msg_all_done').show();
   		$("#loader").hide();
@@ -200,15 +203,13 @@ $(function() {
   	});	
   }
   
-  // Task starts    
+  // **Slide:** **Task**   
   function init_task() {
 
     $('#task').show();
 
-    // Unbind backspace key so that the user does not go back to the previous page accidentally    
-	  shortcut.add("Backspace",function() {});      
+	shortcut.add("Backspace",function() {});      
 
-    // Init countdown      
   	jQuery("#countdown").countDown({
   		startNumber: window.settings.tasklength/1000, // in seconds
   		callBack: function(me) {
@@ -216,9 +217,7 @@ $(function() {
         $('#timer').text('00:00');
   		}
   	});
-	
-    // likes that the user receives     
-
+	   
 		users = {
 		  "posts" : [
 			{
@@ -343,13 +342,18 @@ $(function() {
     } else {
       window.participant = 0; // participant defaults to 0
     }    
-    // qid number
-    if(window.QueryString.qid !== undefined && window.QueryString.qid !== "") {
-      window.qid = parseInt(window.QueryString.qid);
+    // redirect
+    if(window.QueryString.redirect !== undefined && window.QueryString.redirect !== "") {
+      window.redirect = decode(window.QueryString.redirect);
     } else {
-	  window.qid = window.settings.defaultqid;
+	  window.redirect = window.settings.defaultredirect;
 	}
-
+	
+	var urlHasQuestionMark = (window.redirect.indexOf("?") > -1);
+	if(!urlHasQuestionMark) {
+		window.redirect = window.redirect+"?redir=1";
+	}
+	alert(window.redirect);
 
   }
   
@@ -419,7 +423,16 @@ $(function() {
     return str.length < max ? pad("0" + str, max) : str;
   }
 
+  // Function for encoding and decoding URLs
+  // via http://meyerweb.com/eric/tools/dencoder/
+  function encode(unencoded) {
+	return encodeURIComponent(unencoded).replace(/'/g,"%27").replace(/"/g,"%22");	
+  }
+  function decode(encoded) {
+	return decodeURIComponent(encoded.replace(/\+/g,  " "));
+  }
 
+  
   // Simple Countdown
   // via http://davidwalsh.name/jquery-countdown-plugin
   jQuery.fn.countDown = function(settings,to) {
