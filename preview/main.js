@@ -1,6 +1,7 @@
-// In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
-// The following parameter are necessary to adjust: avatar images, redirect link at the end of the study.
-// The other parameters have a default option and adjustments are optional.
+  // **Instructions MainJS**
+  // ------------
+  // In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
+// The following parameters are necessary to adjust: avatar images, redirect link at the end of the study. All other parameters have a default option and adjustments are optional.
 
 $(function() {
 
@@ -13,7 +14,7 @@ $(function() {
 	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
 	
 	// **Avatar images**   
-	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
+	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter. The images should be placed in folder "avatars," located in the main study folder extracted on your computer or server.
 
     settings.numberofavatars = 82;
 
