@@ -1,10 +1,12 @@
-// The paradigm consists of a number of slides that participants see one after the other. The logic of the slides is described in seperate init_... functions. Usually the slides hide the previous slide, and show the container with the slides content, and define what happens on button clicks, etc.
+// In this document you will find instructions on how to adjust different parameters of the paradigm. You can apply the desired changes to the document main.js on your computer or server, using a source code editor, such as Notepad++.
 
+// Some parameters are necessary to adjust: avatar images, redirect link at the end of the study
+// The other parameters have a default option and adjustments are optional
 $(function() {
 
-  // **Settings**
+  // **Parameters**
   // ------------
-  // These settings should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.
+  // These parameters should be modified to fit the needs of the experimenter, especially the qualtrics id to redirect to.
   
   function set_settings() {
     window.settings = [];
