@@ -11,15 +11,22 @@ $(function() {
     window.settings = [];
 	// **Avatar number**   
 	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
+	
 	// **Avatar images** 
-	// The avatar images used in the online preview of the paradigm are copyrighted and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
+	// The avatar images used in the online preview of the paradigm are copyrighted by pickaface.com and not available for redistribution. You should therefore create your own images. All images should be 250x250 megapixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter.
 
     settings.numberofavatars = 82;
 
-    // Length of the task in milliseconds, default: 180000 (3min) 
+	// **Task length** 
+    // Length of the group introduction task in milliseconds. Can be changed to any number (in ms). Default: 180000 (3min) 
     settings.tasklength = 180000; 
 
-    // In condition 1, user will receive likes at the following timepoints (in ms), default: [12000, 9999999]
+		// **Number of "likes"** 
+    // Each received "like" is indicated by the timepoint (in ms) at which the "like" will appear. The number of "likes" in each condition can be changed by adding or removing timepoints. 
+	// **In cases with only 1 "like," a second "like" is added with time point 9999999. 
+	
+    settings.tasklength = 180000; 
+    // In condition 1, the participant will receive likes at the following timepoints (in ms), default: [12000, 9999999]
     settings.condition_1_likes = [12000, 9999999]; 
 
     // ... in condition 2, user will receive likes at the following timepoints (in ms), default: [10000, 15000,35000,80000,1320000,150000]
